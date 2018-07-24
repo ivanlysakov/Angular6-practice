@@ -14,6 +14,14 @@ import { FlightsListComponent } from "./flights/flights-list/flights-list.compon
 import { AirplanesListComponent } from "./airplanes/airplanes-list/airplanes-list.component";
 import { DeparturesListComponent } from "./departures/departures-list/departures-list.component";
 import { PilotsListComponent } from "./pilots/pilots-list/pilots-list.component";
+import { AirplaneService } from "../services/airplane.service";
+import { TypeService } from "../services/type.service";
+import { CrewService } from "../services/crew.service";
+import { PilotService } from "../services/pilot.service";
+import { HostessService } from "../services/hostess.service";
+import { DepartureService } from "../services/departure.service";
+import { FlightService } from "../services/flight.service";
+import { TicketService } from "../services/ticket.service";
 
 export const airportComponents = [
   TypeDetailComponent,
@@ -35,7 +43,14 @@ export const airportComponents = [
 ];
 
 export const airportDirectives = [
- 
+  AirplaneService,
+  TypeService,
+  CrewService,
+  PilotService,
+  HostessService,
+  DepartureService,
+  FlightService,
+  TicketService
 ];
 
 export const airportPipes = [
