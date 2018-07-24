@@ -1,16 +1,27 @@
-# Angular6-practice
-## Academy 2018 • Angular 
+# AirportClient
 
-Для написанного ранее API (Аэропорт) необходимо создать клиент используя Angular.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.8.
 
-• Для каждой сущности должны быть созданы два компонента List и Detail. List - показывает список всех объектов сущности, Detail - показывает подробную информацию для одного объекта.
+## Development server
 
-• Приложение должно уметь взаимодействовать с CRUD операциями, которые вы реализовали ранее
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-• Для навигации и доступа к компонентам сделать меню на UI и использовать роутинг, для выполнения запросов к серверу использовать сервисы (использовать Observable. Promise использовать нельзя).
+## Code scaffolding
 
-• Необходимо использовать минимум два модуля. Например вынести сервисы или что-то расшаренное в другой модуль (Common, Shared, whatever) и подключить его в главный.
+Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-• Вывод должен быть форматированным (например angular pipes)
+## Build
 
-• UI-фреймворк можно использовать любой (Например Boostrap, Angular Material, SemanticUI). Внешний вид также будет оцениваться (основываясь на предыдущей лекции по HTML/CSS).
+Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+
+## Running unit tests
+
+Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+
+## Running end-to-end tests
+
+Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+
+## Further help
+
+To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
