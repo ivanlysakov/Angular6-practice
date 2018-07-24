@@ -3,20 +3,18 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { DeparturesListComponent } from './shared/featureComponents/departures/departures-list/departures-list.component';
-import { DepartureDetailComponent } from './shared/featureComponents/departures/departure-detail/departure-detail.component';
-
+import { AirportModule } from './shared/airport/airport.module';
 
 
 @NgModule({
   declarations: [
-    AppComponent,
-    DeparturesListComponent,
-    DepartureDetailComponent  
+    AppComponent
+   
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    AirportModule //add feature module
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { AirplaneDetailComponent } from '../featureComponents/airplanes/airplane-detail/airplane-detail.component';
-import { airportComponents } from '../featureComponents/export';
+import { airportComponents, airportDirectives } from '../featureComponents/export';
 
 @NgModule({
   imports: [
     CommonModule,
-   ...airportComponents
+   
   ],
-  declarations: [AirplaneDetailComponent]
+  declarations: [...airportComponents],
+  providers: [...airportDirectives]
 })
 export class AirportModule { }
