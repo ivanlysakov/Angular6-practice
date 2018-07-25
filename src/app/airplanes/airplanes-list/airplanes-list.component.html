@@ -1,20 +1,32 @@
 <h2>My Airplanes</h2>
 
-<div class="add-container">
-  <label>Airplane Name:
-    <input #airplaneName />
-  </label>
-  <label>Type:
-    <input #airplaneType />
-  </label>
-  <label>Lifetime:
-    <input #airplaneLifeTime />
-  </label>
-
-  <button class= "add" (click)="add(Name.value, Type.value, Lifetime.value); airplaneName.value=''; airplaneType.value=''; airplaneLifeTime.value=''">
-    add
-  </button>
+<div class="col-xs-10"> 
+  <div class="form-group">
+      <label>Name</label>
+      <input class="form-control" name="name" [(ngModel)]="name" />
+  </div>
+  <div class="form-group">
+      <label>Type</label>
+      <input type="number" class="form-control" name="type" [(ngModel)]="type" />
+  </div>
+  <div class="form-group">
+      <label>Lifetime</label>
+     <input type="number" class="form-control" name="lifetime" [(ngModel)]="lifeTime" />
+  </div>
+  <div class="form-group">
+    <label>Date</label>
+   <input type="date" class="form-control" name="date" [(ngModel)]="creationDate" />
 </div>
+  <div class="form-group">
+      <button class="btn btn-default" (click)="addAirplane()">Добавить</button>
+  </div>
+</div>
+
+
+  <!-- <button class= "add" (click)="add(Name.value, Type.value, Lifetime.value); airplaneName.value=''; airplaneType.value=''; airplaneLifeTime.value=''">
+    add
+  </button> -->
+<!-- </div> -->
 
 <ul class="airplanes">
   <li *ngFor="let airplane of airplanes">

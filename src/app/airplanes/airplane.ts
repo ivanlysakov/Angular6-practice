@@ -1,17 +1,16 @@
 export class Airplane {
-    id: number;
-    name: string;
-    type : AirplaneType; 
-    creationdate : Date;
-    lifetime: number;
-     
-  }
+  id: number;
+  constructor(
+    public name: string,
+    public type: number,
+    public lifetime: number,
+    public creationdate: string
+  ) { }
+}
 
-
-
-  export class AirplaneType {
-    id: number;
-    model: string;
-    capacity: number;
-    cargo 
-  }
+export class AirplaneType {
+  id: number;
+  model: string;
+  capacity: number;
+  cargo
+}

@@ -1,5 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpModule } from '@angular/http';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -23,19 +26,13 @@ import { DeparturesListComponent } from './departures/departures-list/departures
 import { DepartureDetailComponent } from './departures/departure-detail/departure-detail.component';
 import { TicketDetailComponent } from './tickets/ticket-detail/ticket-detail.component';
 import { TicketsListComponent } from './tickets/tickets-list/tickets-list.component';
-import { NavigationMenuComponent } from './core/navigation-menu/navigation-menu.component';
-import { InitialComponent } from './core/initial/initial.component';
-import { HttpClientModule } from '@angular/common/http';
 import { AirplaneService } from './airplanes/airplane.service';
-import { HttpModule } from '../../node_modules/@angular/http';
-import { FormsModule } from '@angular/forms';
 
-
+import { CoreModule } from './core/core.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavigationMenuComponent,
     PilotsListComponent,
     CrewsListComponent,
     CrewDetailComponent,
@@ -52,10 +49,9 @@ import { FormsModule } from '@angular/forms';
     DepartureDetailComponent,
     TicketDetailComponent,
     TicketsListComponent,
-    InitialComponent
-   
   ],
   imports: [
+    CoreModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
@@ -68,7 +64,6 @@ import { FormsModule } from '@angular/forms';
     HttpClientModule,
     HttpModule,
     FormsModule
-    
   ],
   providers: [AirplaneService],
   bootstrap: [AppComponent]

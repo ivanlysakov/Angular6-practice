@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Http } from '../../../../node_modules/@angular/http';
 import { AirplaneService } from '../airplane.service';
 import { Airplane } from '../airplane';
 import { MatBadgeModule } from '@angular/material/badge';
@@ -10,18 +9,22 @@ import { MatBadgeModule } from '@angular/material/badge';
   styleUrls: ['./airplanes-list.component.css']
 })
 export class AirplanesListComponent implements OnInit {
+  public creationDate: string;
+  public type: number;
+  public lifeTime: number;
+  public name: string;
 
   airplanes: Airplane[];
   selectedAirplane: Airplane;
 
-  constructor(private http: Http, private service: AirplaneService) { }
+  constructor(private airplaneService: AirplaneService) { }
 
   ngOnInit() {
     this.showAirplanes();
   }
 
   showAirplanes() {
-    this.service.getAirplanes().subscribe((airplanes) => {
+    this.airplaneService.getAirplanes().subscribe((airplanes) => {
       this.airplanes = airplanes;
       console.log(airplanes);
     });
@@ -30,15 +33,14 @@ export class AirplanesListComponent implements OnInit {
 
   delete(airplane: Airplane): void {
     this.airplanes = this.airplanes.filter(a => a !== airplane);
-    this.service.deleteAirplane(airplane).subscribe();
+    this.airplaneService.deleteAirplane(airplane).subscribe();
   }
 
-  add(name: string, type: number, lifetime: number): void {
-    name = name.trim();
-    if (!name) { return; }
-    this.service.addAirplane({ name } as Airplane)
-      .subscribe(airplane => {
-        this.airplanes.push(airplane);
+  addAirplane(): void {
+    let plane = new Airplane(this.name, this.type, this.lifeTime, this.creationDate)
+    this.airplaneService.addAirplane(plane)
+      .subscribe(plane => {
+        this.airplanes.push(plane);
       });
   }
 

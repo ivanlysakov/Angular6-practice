@@ -18,6 +18,7 @@ export class AirplaneService {
   getAirplanes(): Observable<Airplane[]> {
     return this.http.get<Airplane[]>(this.airplanesUrl);
   }
+  
   getAirplane(id: number): Observable<Airplane> {
     const url = `${this.airplanesUrl}/${id}`;
     return this.http.get<Airplane>(url);
