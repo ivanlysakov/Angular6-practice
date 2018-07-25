@@ -8,8 +8,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LayoutModule } from '@angular/cdk/layout';
-import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule } from '@angular/material';
+import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule, MatSelectModule, MatInputModule } from '@angular/material';
+import {MatFormFieldModule} from '@angular/material/form-field';
 import { PilotsListComponent } from './pilots/pilots-list/pilots-list.component';
+
 
 import { CrewsListComponent } from './crews/crews-list/crews-list.component';
 import { CrewDetailComponent } from './crews/crew-detail/crew-detail.component';
@@ -63,7 +65,10 @@ import { CoreModule } from './core/core.module';
     MatListModule,
     HttpClientModule,
     HttpModule,
-    FormsModule
+    FormsModule,
+    MatFormFieldModule,
+    MatSelectModule,
+    MatInputModule
   ],
   providers: [AirplaneService],
   bootstrap: [AppComponent]
