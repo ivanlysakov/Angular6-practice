@@ -1,3 +1,29 @@
-<p>
-  airplanes-list works!
-</p>
+<h2>My Airplanes</h2>
+
+<div class="add-container">
+  <label>Airplane Name:
+    <input #airplaneName />
+  </label>
+  <label>Type:
+    <input #airplaneType />
+  </label>
+  <label>Lifetime:
+    <input #airplaneLifeTime />
+  </label>
+
+  <button class= "add" (click)="add(Name.value, Type.value, Lifetime.value); airplaneName.value=''; airplaneType.value=''; airplaneLifeTime.value=''">
+    add
+  </button>
+</div>
+
+<ul class="airplanes">
+  <li *ngFor="let airplane of airplanes">
+    <a routerLink="{{airplane.id}}">
+      <span class="badge">{{airplane.id}}</span> {{airplane.name}}
+    </a>
+    <button class="delete" title="delete airplane"
+      (click)="delete(airplane)">x</button>
+  </li>
+</ul>
+
+ <!-- <app-airplane-detail [airplane]="selectedAirplane"></app-airplane-detail>  -->

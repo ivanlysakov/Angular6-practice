@@ -7,6 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule } from '@angular/material';
 import { PilotsListComponent } from './pilots/pilots-list/pilots-list.component';
+
 import { CrewsListComponent } from './crews/crews-list/crews-list.component';
 import { CrewDetailComponent } from './crews/crew-detail/crew-detail.component';
 import { PilotDetailComponent } from './pilots/pilot-detail/pilot-detail.component';
@@ -24,6 +25,10 @@ import { TicketDetailComponent } from './tickets/ticket-detail/ticket-detail.com
 import { TicketsListComponent } from './tickets/tickets-list/tickets-list.component';
 import { NavigationMenuComponent } from './core/navigation-menu/navigation-menu.component';
 import { InitialComponent } from './core/initial/initial.component';
+import { HttpClientModule } from '@angular/common/http';
+import { AirplaneService } from './airplanes/airplane.service';
+import { HttpModule } from '../../node_modules/@angular/http';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -53,16 +58,19 @@ import { InitialComponent } from './core/initial/initial.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-      BrowserAnimationsModule,
+    BrowserAnimationsModule,
     LayoutModule,
     MatToolbarModule,
     MatButtonModule,
     MatSidenavModule,
     MatIconModule,
-    MatListModule
+    MatListModule,
+    HttpClientModule,
+    HttpModule,
+    FormsModule
     
   ],
-  providers: [],
+  providers: [AirplaneService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

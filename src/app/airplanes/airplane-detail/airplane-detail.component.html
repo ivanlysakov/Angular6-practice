@@ -1,3 +1,11 @@
-<p>
-  airplane-detail works!
-</p>
+<div *ngIf="airplane">
+  <h2>{{airplane.name | uppercase}} Details</h2>
+  <div><span>id: </span>{{airplane.id}}</div>
+  <div>
+    <label>name:
+      <input [(ngModel)]="airplane.name" placeholder="name"/>
+    </label>
+  </div>
+  <button (click)="goBack()">go back</button>
+  <button (click)="save()">save</button>
+</div>

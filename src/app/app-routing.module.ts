@@ -8,13 +8,15 @@ import { HostessesListComponent } from './hostesses/hostesses-list/hostesses-lis
 import { DeparturesListComponent } from './departures/departures-list/departures-list.component';
 import { FlightsListComponent } from './flights/flights-list/flights-list.component';
 import { TicketsListComponent } from './tickets/tickets-list/tickets-list.component';
-import { AppComponent } from './app.component';
 import { InitialComponent } from './core/initial/initial.component';
+import { AirplaneDetailComponent } from './airplanes/airplane-detail/airplane-detail.component';
 
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', component: InitialComponent},
   { path: 'Airplanes', component: AirplanesListComponent },
+  { path: 'Airplanes/:id', component: AirplaneDetailComponent },
+
   { path: 'Types', component: TypesListComponent },
   { path: 'Crews', component: CrewsListComponent },
   { path: 'Pilots', component: PilotsListComponent },

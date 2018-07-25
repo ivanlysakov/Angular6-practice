@@ -1,4 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Airplane } from '../airplane';
+import { AirplaneService } from '../airplane.service';
+import { ActivatedRoute } from '../../../../node_modules/@angular/router';
+import { Location } from '@angular/common';
+
 
 @Component({
   selector: 'app-airplane-detail',
@@ -6,10 +11,31 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./airplane-detail.component.css']
 })
 export class AirplaneDetailComponent implements OnInit {
+  @Input() airplane: Airplane;
 
-  constructor() { }
+  constructor(
+    private route: ActivatedRoute,
+    private service: AirplaneService,
+    private location: Location
+  ) {}
 
   ngOnInit() {
+    this.getAirplane();
+  }
+
+  getAirplane(): void {
+    const id = +this.route.snapshot.paramMap.get('id');
+    this.service.getAirplane(id)
+      .subscribe(airplane => this.airplane = airplane);
+  }
+
+  goBack(): void {
+    this.location.back();
+  }
+
+  save(): void {
+    this.service.updateAirplane(this.airplane)
+      .subscribe(() => this.goBack());
   }
 
 }
