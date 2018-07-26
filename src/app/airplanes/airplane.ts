@@ -1,5 +1,3 @@
-import { Type } from "../types/type";
-
 export class Airplane {
   id: number;
   type: string;

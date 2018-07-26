@@ -1,3 +1,45 @@
-<p>
-  flight-detail works!
-</p>
+
+<div class="title">
+    <h2>Flight detail</h2>
+</div> 
+<mat-card class="flight-card" *ngIf="flight">
+  <mat-card-header>
+    <div mat-card-avatar class="flight-header-image"></div>
+    <mat-card-title>
+      <div class="detail-container">
+          <mat-form-field>
+              <input matInput placeholder="Flight number" [(ngModel)]="flight.number">
+            </mat-form-field>
+            <mat-form-field>
+              <input matInput placeholder="Departure" [(ngModel)]="flight.departure">
+            </mat-form-field>
+              <mat-form-field>
+              <input matInput [matDatepicker]="picker" placeholder="Departure time" [(ngModel)]="flight.departureTime">
+              <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+              <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput placeholder="Destination" [(ngModel)]="flight.destination">
+              </mat-form-field>
+                <mat-form-field>
+                <input matInput [matDatepicker]="picker2" placeholder="Arrival time" [(ngModel)]="flight.arrivalTime">
+                <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+                <mat-datepicker #picker2></mat-datepicker>
+              </mat-form-field>
+              
+      </div>
+    </mat-card-title>
+
+  </mat-card-header>
+  <img mat-card-image src="/assets/images/flight.svg" alt="Photo of Flight">
+  <mat-card-content>
+    <p>
+        You are allowed to bring a quart-sized bag of liquids, aerosols, gels, creams and pastes in your carry-on bag and through the checkpoint. 
+        These are limited to travel-sized containers that are 3.4 ounces (100 milliliters) or less per item.
+    </p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-button (click)="goBack()">Go back</button>
+    <button mat-button (click)="save()">Save</button>
+  </mat-card-actions>
+</mat-card>

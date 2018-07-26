@@ -1,3 +1,25 @@
-<p>
-  departures-list works!
-</p>
+<div class="add-container">
+  <h2>My Departures</h2>
+  <mat-form-field>
+    <input matInput placeholder="Flight number" [(ngModel)]="FlightNumber">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput [matDatepicker]="picker" placeholder="Departure time" [(ngModel)]="time">
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+
+  <button mat-button color="primary" (click)="create()">Add</button>
+
+</div>
+<mat-list>
+  <h3 mat-subheader>Enabled flights</h3>
+  <mat-list-item *ngFor="let dep of departures">
+    <mat-icon mat-list-icon>flight_takeoff</mat-icon>
+    <a mat-button routerLink="{{dep.id}}" matTooltip="Departure detail">{{dep.flightNumber}} - {{dep.time | date : medium}}</a>
+    <button mat-icon-button (click)="delete(dep)">
+      <mat-icon>delete</mat-icon>
+    </button>
+  </mat-list-item>
+</mat-list>

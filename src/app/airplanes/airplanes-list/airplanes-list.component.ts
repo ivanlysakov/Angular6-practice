@@ -30,7 +30,6 @@ export class AirplanesListComponent implements OnInit {
     });
   }
 
-
   delete(airplane: Airplane): void {
     this.airplanes = this.airplanes.filter(a => a !== airplane);
     this.airplaneService.delete(airplane).subscribe();

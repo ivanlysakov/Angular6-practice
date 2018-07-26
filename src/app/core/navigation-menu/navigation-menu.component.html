@@ -8,14 +8,15 @@
     [opened]="!(isHandset$ | async)">
     <mat-toolbar color="primary">Menu</mat-toolbar>
     <mat-nav-list>
-      <a mat-list-item [routerLink]="['/Airplanes']">Airplanes</a>
-      <a mat-list-item [routerLink]="['/Types']">Airplane Types</a>
-      <a mat-list-item [routerLink]="['/Pilots']">Pilots</a>
-      <a mat-list-item [routerLink]="['/Hostesses']">Hostesses</a>
-      <a mat-list-item [routerLink]="['/Crews']">Crews</a>
-      <a mat-list-item [routerLink]="['/Departures']">Departures</a>
-      <a mat-list-item [routerLink]="['/Flights']">Flights</a>
-      <a mat-list-item [routerLink]="['/Tickets']">Tickets</a>
+      <a mat-list-item [routerLink]="['/Home']"> <mat-icon mat-list-icon>home</mat-icon> Home</a>
+      <a mat-list-item [routerLink]="['/Airplanes']"> <mat-icon mat-list-icon>flight</mat-icon> Airplanes</a>
+      <a mat-list-item [routerLink]="['/Types']"><mat-icon mat-list-icon>airplanemode_on</mat-icon>Airplane Types</a>
+      <a mat-list-item [routerLink]="['/Pilots']"><mat-icon mat-list-icon>airline_seat_recline_extra</mat-icon>Pilots</a>
+      <a mat-list-item [routerLink]="['/Hostesses']"><mat-icon mat-list-icon>star</mat-icon>Hostesses</a>
+      <a mat-list-item [routerLink]="['/Crews']"><mat-icon mat-list-icon>group</mat-icon>Crews</a>
+      <a mat-list-item [routerLink]="['/Departures']"><mat-icon mat-list-icon>list_alt</mat-icon>Departures</a>
+      <a mat-list-item [routerLink]="['/Flights']"><mat-icon mat-list-icon>flight_takeoff</mat-icon>Flights</a>
+      <a mat-list-item [routerLink]="['/Tickets']"><mat-icon mat-list-icon>receipt</mat-icon>Tickets</a>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>

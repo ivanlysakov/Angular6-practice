@@ -22,6 +22,7 @@ import { FlightDetailComponent } from './flights/flight-detail/flight-detail.com
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', component: InitialComponent},
+  { path: 'Home', component: InitialComponent },
   { path: 'Airplanes', component: AirplanesListComponent },
   { path: 'Airplanes/:id', component: AirplaneDetailComponent },
   { path: 'Pilots', component: PilotsListComponent },
