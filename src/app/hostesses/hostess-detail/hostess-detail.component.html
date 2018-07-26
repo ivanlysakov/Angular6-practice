@@ -1,3 +1,40 @@
-<p>
-  hostess-detail works!
-</p>
+
+<div class="title">
+    <h2>Hostess detail</h2>
+  </div>
+  <mat-card class="hostess-card" *ngIf="hostess">
+    <mat-card-header>
+      <div mat-card-avatar class="hostess-header-image"></div>
+      <mat-card-title>
+        <div class="detail-container">
+          <mat-form-field>
+            <input matInput placeholder="Firstname" [(ngModel)]="hostess.firstName">
+          </mat-form-field>
+          <mat-form-field>
+            <input matInput placeholder="Lastname" [(ngModel)]="hostess.lastname">
+          </mat-form-field>
+  
+          <mat-form-field>
+            <input matInput [matDatepicker]="picker" placeholder="Birthday" [(ngModel)]="hostess.birthDay">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+  
+   
+  
+        </div>
+      </mat-card-title>
+  
+    </mat-card-header>
+    <img mat-card-image src="/assets/images/hostess.jpg" alt="Photo of Hostess">
+    <mat-card-content>
+      <p>
+          The terms "stewardess" and "flight attendant" describe the same basic job of tending to airplane passengers' needs and safety.
+          "Stewardess," however, is an outdated term that has been replaced by "flight attendant" on all airlines
+      </p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-button (click)="goBack()">Go back</button>
+      <button mat-button (click)="save()">Save</button>
+    </mat-card-actions>
+  </mat-card>

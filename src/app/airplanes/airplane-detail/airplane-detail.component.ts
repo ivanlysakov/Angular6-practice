@@ -12,6 +12,7 @@ import { Location } from '@angular/common';
 })
 export class AirplaneDetailComponent implements OnInit {
   @Input() airplane: Airplane;
+ 
 
   constructor(
     private route: ActivatedRoute,
@@ -26,7 +27,8 @@ export class AirplaneDetailComponent implements OnInit {
   get(): void {
     const id = +this.route.snapshot.paramMap.get('id');
     this.service.getById(id)
-      .subscribe(airplane => this.airplane = airplane);
+      .subscribe(airplane => this.airplane = airplane); 
+      
   }
 
   goBack(): void {

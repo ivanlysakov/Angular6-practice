@@ -1,0 +1,20 @@
+
+.hostess-card {
+    max-width: 400px;
+    margin-left: 10px; 
+  }
+  
+  .hostess-header-image {
+    background-image: url('https://cdn.melanomanewstoday.com/wp-content/uploads/2014/12/shutterstock_224750251.jpg');
+    background-size: cover;
+  }
+  .detail-container {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    box-shadow: #888;
+  }
+
+  .title{
+    margin: 10px;
+  }

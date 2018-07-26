@@ -1,10 +1,11 @@
- 
-  export class Pilot {
-    id: number;
-    constructor (
+
+export class Pilot {
+  id: number;
+  crewId: number;
+  constructor(
     firstname: string,
     lastname: string,
     birthday: string,
-    experience: number,
-    crewId:number){}
-  }
+    experience: number
+  ) { }
+}

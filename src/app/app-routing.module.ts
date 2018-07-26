@@ -13,6 +13,10 @@ import { AirplaneDetailComponent } from './airplanes/airplane-detail/airplane-de
 import { PilotDetailComponent } from './pilots/pilot-detail/pilot-detail.component';
 import { TypeDetailComponent } from './types/type-detail/type-detail.component';
 import { TicketDetailComponent } from './tickets/ticket-detail/ticket-detail.component';
+import { HostessDetailComponent } from './hostesses/hostess-detail/hostess-detail.component';
+import { CrewDetailComponent } from './crews/crew-detail/crew-detail.component';
+import { DepartureDetailComponent } from './departures/departure-detail/departure-detail.component';
+import { FlightDetailComponent } from './flights/flight-detail/flight-detail.component';
 
 
 
@@ -24,17 +28,19 @@ const routes: Routes = [
   { path: 'Pilots/:id', component: PilotDetailComponent },
   { path: 'Types', component: TypesListComponent },
   { path: 'Types/:id', component: TypeDetailComponent },
+  { path: 'Tickets', component: TicketsListComponent },
+  { path: 'Tickets/:id', component: TicketDetailComponent },
+  { path: 'Hostesses', component: HostessesListComponent },
+  { path: 'Hostesses/:id', component: HostessDetailComponent },
 
 
   { path: 'Crews', component: CrewsListComponent },
-  
-
-
-  { path: 'Hostesses', component: HostessesListComponent },
   { path: 'Departures', component: DeparturesListComponent },
   { path: 'Flights', component: FlightsListComponent },
-  { path: 'Tickets', component: TicketsListComponent },
-  { path: 'Tickets/:id', component: TicketDetailComponent },
+  { path: 'Crews/:id', component: CrewDetailComponent },
+  { path: 'Departures/:id', component: DepartureDetailComponent },
+  { path: 'Flights/:id', component: FlightDetailComponent },
+
 
 ];
 

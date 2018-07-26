@@ -1,3 +1,21 @@
-<p>
-  crews-list works!
-</p>
+
+<div class="add-container">
+    <h2>Airpot Crews</h2>
+    <mat-form-field>
+      <input matInput placeholder="Crew Number" [(ngModel)]="crewNumber">
+    </mat-form-field>
+   
+    <button mat-button color="primary" (click)="create()">Add</button>
+  
+  </div>
+<mat-list>
+  <h3 mat-subheader>Enabled tickets</h3>
+  <mat-list-item *ngFor="let crew of crews">
+    <mat-icon mat-list-icon>group</mat-icon>
+    <a mat-button routerLink="{{crew.id}}" matTooltip="Crew detail">№ {{crew.crewNumber}}
+    </a>
+    <button mat-icon-button (click)="delete(ticket)">
+      <mat-icon>delete</mat-icon>
+    </button>
+  </mat-list-item>
+</mat-list>

@@ -2,7 +2,7 @@ import { Type } from "../types/type";
 
 export class Airplane {
   id: number;
-  type: Type;
+  type: string;
   constructor(
     public name: string,
     public typeId: number,

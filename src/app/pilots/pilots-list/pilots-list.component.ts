@@ -13,7 +13,7 @@ export class PilotsListComponent implements OnInit {
   public lastname: string;
   public birthday: string;
   public experience: number;
-  public crewId: number
+  
 
   pilots: Pilot[];
   selectedPilot: Pilot;
@@ -38,7 +38,7 @@ export class PilotsListComponent implements OnInit {
   }
 
   addAirplane(): void {
-    let pilot = new Pilot(this.firstname, this.lastname, this.birthday, this.experience, this.crewId)
+    let pilot = new Pilot(this.firstname, this.lastname, this.birthday, this.experience)
     this.pilotService.create(pilot)
       .subscribe(pilot => {
         this.pilots.push(pilot);
