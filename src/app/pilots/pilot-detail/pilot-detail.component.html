@@ -1,3 +1,43 @@
-<p>
-  pilot-detail works!
-</p>
+
+<div class="title">
+  <h2>Pilot detail</h2>
+</div>
+<mat-card class="pilot-card" *ngIf="pilot">
+  <mat-card-header>
+    <div mat-card-avatar class="pilot-header-image"></div>
+    <mat-card-title>
+      <div class="detail-container">
+        <mat-form-field>
+          <input matInput placeholder="Firstname" [(ngModel)]="pilot.firstName">
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="Lastname" [(ngModel)]="pilot.lastname">
+        </mat-form-field>
+
+        <mat-form-field>
+          <input matInput [matDatepicker]="picker" placeholder="Birthday" [(ngModel)]="pilot.birthDay">
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+
+        <mat-form-field>
+          <input matInput placeholder="Experience (years)" [(ngModel)]="pilot.experience">
+        </mat-form-field>
+
+      </div>
+    </mat-card-title>
+
+  </mat-card-header>
+  <img mat-card-image src="https://cdn.melanomanewstoday.com/wp-content/uploads/2014/12/shutterstock_224750251.jpg" alt="Photo of Airplane">
+  <mat-card-content>
+    <p>
+      There are few things more liberating than taking control of an aircraft. What seemed insurmountable on solid earth is suddenly
+      no more than an inconvenience; trips are shorter, views are better, and it is as though the sky belongs to you alone.
+      The first step to getting off the ground, however, is obtaining a pilot licence
+    </p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-button (click)="goBack()">Go back</button>
+    <button mat-button (click)="save()">Save</button>
+  </mat-card-actions>
+</mat-card>

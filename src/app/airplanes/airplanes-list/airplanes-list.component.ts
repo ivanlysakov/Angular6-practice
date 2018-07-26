@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AirplaneService } from '../airplane.service';
-import { Airplane } from '../airplane';
-import { MatBadgeModule } from '@angular/material/badge';
+import { Airplane, AirplaneType } from '../airplane';
+
 
 @Component({
   selector: 'app-airplanes-list',
@@ -10,7 +10,7 @@ import { MatBadgeModule } from '@angular/material/badge';
 })
 export class AirplanesListComponent implements OnInit {
   public creationDate: string;
-  public type: number;
+  public typeId: number;
   public lifeTime: number;
   public name: string;
 
@@ -20,11 +20,11 @@ export class AirplanesListComponent implements OnInit {
   constructor(private airplaneService: AirplaneService) { }
 
   ngOnInit() {
-    this.showAirplanes();
+    this.showAll();
   }
 
-  showAirplanes() {
-    this.airplaneService.getAirplanes().subscribe((airplanes) => {
+  showAll() {
+    this.airplaneService.getAll().subscribe((airplanes) => {
       this.airplanes = airplanes;
       console.log(airplanes);
     });
@@ -33,12 +33,12 @@ export class AirplanesListComponent implements OnInit {
 
   delete(airplane: Airplane): void {
     this.airplanes = this.airplanes.filter(a => a !== airplane);
-    this.airplaneService.deleteAirplane(airplane).subscribe();
+    this.airplaneService.delete(airplane).subscribe();
   }
 
-  addAirplane(): void {
-    let plane = new Airplane(this.name, this.type, this.lifeTime, this.creationDate)
-    this.airplaneService.addAirplane(plane)
+  create(): void {
+    let plane = new Airplane(this.name, this.typeId, this.lifeTime, this.creationDate)
+    this.airplaneService.create(plane)
       .subscribe(plane => {
         this.airplanes.push(plane);
       });

@@ -1,0 +1,21 @@
+
+.add-container {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    box-shadow: #888;
+  }
+  
+  .mat-list-icon {
+    color: rgba(32, 9, 231, 0.54);
+  }
+  
+  .button,
+  .a {
+    margin-right: 8px;
+  }
+  .mat-list{
+    float: left;
+  }
+  
+  

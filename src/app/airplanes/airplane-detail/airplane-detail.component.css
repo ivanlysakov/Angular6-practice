@@ -1,37 +1,19 @@
-.add-container
-{
-display: flex;
-flex-direction: column
+.airplane-card {
+  max-width: 400px;
+  margin-left: 10px; 
 }
 
-label {
-    display: inline-block;
-    width: 3em;
-    margin: .5em 0;
-    color: #607D8B;
-    font-weight: bold;
-  }
-  input {
-    height: 2em;
-    font-size: 1em;
-    padding-left: .4em;
-  }
-  button {
-    margin-top: 20px;
-    font-family: Arial;
-    background-color: #eee;
-    border: none;
-    padding: 5px 10px;
-    border-radius: 4px;
-    cursor: pointer; cursor: hand;
-    margin: 5px;
-  }
-  button:hover {
-    background-color: #cfd8dc;
-  }
-  button:disabled {
-    background-color: #eee;
-    color: #ccc;
-    cursor: auto;
-  }
-  
+.airplane-header-image {
+  background-image: url('https://static-s.aa-cdn.net/img/ios/967818924/6d5e49581f6740185dc9ce6afb479290?v=1');
+  background-size: cover;
+}
+.detail-container {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  box-shadow: #888;
+}
+
+.title{
+  margin: 10px;
+}

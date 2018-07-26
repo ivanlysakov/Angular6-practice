@@ -1,52 +1,33 @@
-<h2>My Airplanes</h2>
 
-<div class="col-xs-10"> 
-  <div class="form-group">
-      <label>Name</label>
-      <input class="form-control" name="name" [(ngModel)]="name" />
+
+<div class="add-container">
+    <h2>My Airplanes</h2>
+    <mat-form-field>
+      <input matInput placeholder="Board number" [(ngModel)]="name">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Airplane type" [(ngModel)]="type">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Airplane lifetime" [(ngModel)]="lifeTime">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput [matDatepicker]="picker" placeholder="Airplane release" [(ngModel)]="creationDate">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+    <button mat-button color="primary" (click)="create()">Add</button>
+  
   </div>
-  <div class="form-group">
-      <label>Type</label>
-      <input type="number" class="form-control" name="type" [(ngModel)]="type" />
-  </div>
-  <div class="form-group">
-      <label>Lifetime</label>
-     <input type="number" class="form-control" name="lifetime" [(ngModel)]="lifeTime" />
-  </div>
-  <div class="form-group">
-    <label>Date</label>
-   <input type="date" class="form-control" name="date" [(ngModel)]="creationDate" />
-</div>
-  <div class="form-group">
-      <button class="btn btn-default" (click)="addAirplane()">Добавить</button>
-  </div>
-</div>
+<mat-list>
+  <h3 mat-subheader>Enabled airplanes</h3>
+  <mat-list-item *ngFor="let airplane of airplanes">
+    <mat-icon mat-list-icon>airplanemode_on</mat-icon>
+    <a mat-button routerLink="{{airplane.id}}" matTooltip="Board detail">{{airplane.name}}</a>
+    <button mat-icon-button (click)="delete(airplane)">
+      <mat-icon>delete</mat-icon>
+    </button>
+  </mat-list-item>
+</mat-list>
 
 
-<div class="example-container">
-  <mat-form-field>
-    <input matInput placeholder="Input">
-  </mat-form-field>
-
-  <mat-form-field>
-    <textarea matInput placeholder="Textarea"></textarea>
-  </mat-form-field>
-
-  <mat-form-field>
-    <mat-select placeholder="Select">
-      <mat-option value="option">Option</mat-option>
-    </mat-select>
-  </mat-form-field>
-</div>
-
-
-
-<ul class="airplanes">
-  <li *ngFor="let airplane of airplanes">
-    <a routerLink="{{airplane.id}}">
-      <span class="badge">{{airplane.id}}</span> {{airplane.name}}
-    </a>
-    <button class="delete" title="delete airplane"
-      (click)="delete(airplane)">x</button>
-  </li>
-</ul>

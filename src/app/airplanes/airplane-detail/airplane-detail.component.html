@@ -1,11 +1,39 @@
-<div *ngIf="airplane">
-  <h2>{{airplane.name | uppercase}} Details</h2>
-  <div><span>id: </span>{{airplane.id}}</div>
-  <div>
-    <label>name:
-      <input [(ngModel)]="airplane.name" placeholder="name"/>
-    </label>
-  </div>
-  <button (click)="goBack()">go back</button>
-  <button (click)="save()">save</button>
-</div>
+
+<div class="title">
+    <h2>Board detail</h2>
+</div> 
+<mat-card class="airplane-card" *ngIf="airplane">
+  <mat-card-header>
+    <div mat-card-avatar class="airplane-header-image"></div>
+    <mat-card-title>
+      <div class="detail-container">
+        <mat-form-field>
+          <input matInput placeholder="Board number" [(ngModel)]="airplane.name">
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="Airplane type" [(ngModel)]="airplane.type">
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="Airplane lifetime (years)" [(ngModel)]="airplane.lifetime">
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput [matDatepicker]="picker" placeholder="Airplane release" [(ngModel)]="airplane.creationDate">
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+      </div>
+    </mat-card-title>
+
+  </mat-card-header>
+  <img mat-card-image src="https://www.aerospace-technology.com/wp-content/uploads/sites/15/2017/10/1-boeing777f.jpg" alt="Photo of Airplane">
+  <mat-card-content>
+    <p>
+      The Boeing 737 is a short- to medium-range twinjet narrow-body airliner developed and manufactured by Boeing Commercial Airplanes
+      in the United States.
+    </p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-button (click)="goBack()">Go back</button>
+    <button mat-button (click)="save()">Save</button>
+  </mat-card-actions>
+</mat-card>

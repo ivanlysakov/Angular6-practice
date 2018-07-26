@@ -8,8 +8,28 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LayoutModule } from '@angular/cdk/layout';
-import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule, MatSelectModule, MatInputModule } from '@angular/material';
-import {MatFormFieldModule} from '@angular/material/form-field';
+import {
+  MatToolbarModule,
+  MatButtonModule,
+  MatSidenavModule,
+  MatIconModule,
+  MatListModule,
+  MatSelectModule,
+  MatInputModule,
+  MatAutocompleteModule,
+  MatBadgeModule,
+  MatCardModule,
+  MatDatepickerModule,
+  MatGridListModule,
+  MatMenuModule,
+  MatNativeDateModule,
+
+  MatTableModule,
+  MatTabsModule,
+  MatTooltipModule,
+
+} from '@angular/material';
+import { MatFormFieldModule } from '@angular/material/form-field';
 import { PilotsListComponent } from './pilots/pilots-list/pilots-list.component';
 
 
@@ -68,7 +88,18 @@ import { CoreModule } from './core/core.module';
     FormsModule,
     MatFormFieldModule,
     MatSelectModule,
-    MatInputModule
+    MatInputModule,
+    MatAutocompleteModule,
+    MatBadgeModule,
+    MatCardModule,
+    MatDatepickerModule,
+    MatGridListModule,
+    MatMenuModule,
+    MatNativeDateModule,
+    MatTableModule,
+    MatTabsModule,
+    MatTooltipModule,
+
   ],
   providers: [AirplaneService],
   bootstrap: [AppComponent]

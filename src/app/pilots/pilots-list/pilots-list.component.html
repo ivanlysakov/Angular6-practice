@@ -1,3 +1,36 @@
-<p>
-  pilots-list works!
-</p>
+<h2>My Pilots</h2>
+
+<mat-list>
+  <h3 mat-subheader>Enabled pilots</h3>
+  <mat-list-item *ngFor="let pilot of pilots">
+    <mat-icon mat-list-icon>person</mat-icon>
+    <a mat-button routerLink="{{pilot.id}}" matTooltip="Pilot detail">{{pilot.firstName}} {{pilot.lastname}}</a>
+    <button mat-icon-button (click)="delete(pilot)">
+      <mat-icon>delete</mat-icon>
+    </button>
+  </mat-list-item>
+</mat-list>
+
+
+<div class="add-container">
+  <mat-form-field>
+    <input matInput placeholder="Firstname" [(ngModel)]="firstname">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="Lastname" [(ngModel)]="lastname">
+  </mat-form-field>
+  <mat-form-field>
+      <input matInput [matDatepicker]="picker" placeholder="Birthday" [(ngModel)]="birthday">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="Pilot experience" [(ngModel)]="experience">
+  </mat-form-field>
+  
+  <button mat-button color="primary" (click)="create()">
+      <mat-icon mat-list-icon>person_add</mat-icon>
+    Add pilot
+  </button>
+
+</div>

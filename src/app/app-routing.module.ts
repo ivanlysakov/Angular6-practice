@@ -10,16 +10,21 @@ import { FlightsListComponent } from './flights/flights-list/flights-list.compon
 import { TicketsListComponent } from './tickets/tickets-list/tickets-list.component';
 import { InitialComponent } from './core/initial/initial.component';
 import { AirplaneDetailComponent } from './airplanes/airplane-detail/airplane-detail.component';
+import { PilotDetailComponent } from './pilots/pilot-detail/pilot-detail.component';
 
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', component: InitialComponent},
   { path: 'Airplanes', component: AirplanesListComponent },
   { path: 'Airplanes/:id', component: AirplaneDetailComponent },
+  { path: 'Pilots', component: PilotsListComponent },
+  { path: 'Pilots/:id', component: PilotDetailComponent },
 
   { path: 'Types', component: TypesListComponent },
   { path: 'Crews', component: CrewsListComponent },
-  { path: 'Pilots', component: PilotsListComponent },
+  
+
+
   { path: 'Hostesses', component: HostessesListComponent },
   { path: 'Departures', component: DeparturesListComponent },
   { path: 'Flights', component: FlightsListComponent },

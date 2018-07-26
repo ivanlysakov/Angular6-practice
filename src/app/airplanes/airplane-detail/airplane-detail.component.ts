@@ -20,12 +20,12 @@ export class AirplaneDetailComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.getAirplane();
+    this.get();
   }
 
-  getAirplane(): void {
+  get(): void {
     const id = +this.route.snapshot.paramMap.get('id');
-    this.service.getAirplane(id)
+    this.service.getById(id)
       .subscribe(airplane => this.airplane = airplane);
   }
 
@@ -34,7 +34,7 @@ export class AirplaneDetailComponent implements OnInit {
   }
 
   save(): void {
-    this.service.updateAirplane(this.airplane)
+    this.service.update(this.airplane)
       .subscribe(() => this.goBack());
   }
 
