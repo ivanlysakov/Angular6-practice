@@ -1,3 +1,34 @@
-<p>
-  types-list works!
-</p>
+<h2>Airport Types</h2>
+
+<div class="add-container">
+    <mat-form-field>
+      <input matInput placeholder="Model" [(ngModel)]="model">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Capacity" [(ngModel)]="capacity">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Cargo" [(ngModel)]="cargo">
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput placeholder="AirplaneID" [(ngModel)]="airplaneId">
+    </mat-form-field>
+    
+    <button mat-button color="primary" (click)="create()">
+        <mat-icon mat-list-icon>person_add</mat-icon>
+      Add type
+    </button>
+  </div>
+  
+<mat-list>
+  <h3 mat-subheader>Enabled types</h3>
+  <mat-list-item *ngFor="let type of types">
+    <mat-icon mat-list-icon>person</mat-icon>
+    <a mat-button routerLink="{{type.id}}" matTooltip="Pilot detail">{{type.model}}</a>
+    <button mat-icon-button (click)="delete(type)">
+      <mat-icon>delete</mat-icon>
+    </button>
+  </mat-list-item>
+</mat-list>
+
+

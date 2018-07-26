@@ -1,4 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Input } from '@angular/core';
+import { Type } from '../type';
+import { ActivatedRoute } from '@angular/router';
+import { TypeService } from '../type.service';
+import { Location } from '@angular/common';
+
 
 @Component({
   selector: 'app-type-detail',
@@ -6,10 +11,31 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./type-detail.component.css']
 })
 export class TypeDetailComponent implements OnInit {
+  @Input() type: Type;
 
-  constructor() { }
+  constructor(
+    private route: ActivatedRoute,
+    private service: TypeService,
+    private location: Location
+  ) {}
 
   ngOnInit() {
+    this.get();
+  }
+
+  get(): void {
+    const id = +this.route.snapshot.paramMap.get('id');
+    this.service.getById(id)
+      .subscribe(type => this.type = type);
+  }
+
+  goBack(): void {
+    this.location.back();
+  }
+
+  save(): void {
+    this.service.update(this.type)
+      .subscribe(() => this.goBack());
   }
 
 }

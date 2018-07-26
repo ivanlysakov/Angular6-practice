@@ -38,10 +38,10 @@ export class PilotsListComponent implements OnInit {
   }
 
   addAirplane(): void {
-    let plane = new Pilot(this.firstname, this.lastname, this.birthday, this.experience, this.crewId)
-    this.pilotService.create(plane)
-      .subscribe(plane => {
-        this.pilots.push(plane);
+    let pilot = new Pilot(this.firstname, this.lastname, this.birthday, this.experience, this.crewId)
+    this.pilotService.create(pilot)
+      .subscribe(pilot => {
+        this.pilots.push(pilot);
       });
   }
 

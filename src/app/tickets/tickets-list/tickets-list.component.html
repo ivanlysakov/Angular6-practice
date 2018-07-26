@@ -1,3 +1,26 @@
-<p>
-  tickets-list works!
-</p>
+
+
+<div class="add-container">
+    <h2>Airpot Tickets</h2>
+    <mat-form-field>
+      <input matInput placeholder="Price" [(ngModel)]="price">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Flight Number" [(ngModel)]="flightNumber">
+    </mat-form-field>
+   
+    <button mat-button color="primary" (click)="create()">Add</button>
+  
+  </div>
+<mat-list>
+  <h3 mat-subheader>Enabled tickets</h3>
+  <mat-list-item *ngFor="let ticket of tickets">
+    <mat-icon mat-list-icon>receipt</mat-icon>
+    <a mat-button routerLink="{{ticket.id}}" matTooltip="Ticket detail">{{ticket.flightNumber}} - {{ticket.price}} $ </a>
+    <button mat-icon-button (click)="delete(ticket)">
+      <mat-icon>delete</mat-icon>
+    </button>
+  </mat-list-item>
+</mat-list>
+
+

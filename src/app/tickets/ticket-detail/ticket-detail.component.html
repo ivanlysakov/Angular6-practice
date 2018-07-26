@@ -1,3 +1,31 @@
-<p>
-  ticket-detail works!
-</p>
+<div class="title">
+  <h2>Ticket detail</h2>
+</div>
+<mat-card class="ticket-card" *ngIf="ticket">
+  <mat-card-header>
+    <div mat-card-avatar class="ticket-header-image"></div>
+    <mat-card-title>
+      <div class="detail-container">
+        <mat-form-field>
+          <input matInput placeholder="Price" [(ngModel)]="ticket.price">
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="Flight number" [(ngModel)]="ticket.flightNumber">
+        </mat-form-field>
+      </div>
+    </mat-card-title>
+
+  </mat-card-header>
+  <img mat-card-image src="/assets/images/ticket.jpg" alt="Photo of Ticket">
+  <mat-card-content>
+    <p>
+        If you’re packing your laptop in a checked bag, the best advice is probably don’t do it.
+        From lost luggage to lost data, there’s so much that can go wrong. With the threat of a laptop ban looming, though, you may not have a choice. 
+        Whatever the circumstance, you want to keep your laptop safe once you drop off your bag and go on your way.
+    </p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-button (click)="goBack()">Go back</button>
+    <button mat-button (click)="save()">Save</button>
+  </mat-card-actions>
+</mat-card>

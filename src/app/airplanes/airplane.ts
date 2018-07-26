@@ -1,6 +1,8 @@
+import { Type } from "../types/type";
+
 export class Airplane {
   id: number;
-  type: AirplaneType;
+  type: Type;
   constructor(
     public name: string,
     public typeId: number,
@@ -9,9 +11,3 @@ export class Airplane {
   ) { }
 }
 
-export class AirplaneType {
-  id: number;
-  model: string;
-  capacity: number;
-  cargo: number;
-}

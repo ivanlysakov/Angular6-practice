@@ -1,3 +1,36 @@
-<p>
-  type-detail works!
-</p>
+<div class="title">
+  <h2>Type detail</h2>
+</div>
+<mat-card class="type-card" *ngIf="type">
+  <mat-card-header>
+    <div mat-card-avatar class="type-header-image"></div>
+    <mat-card-title>
+      <div class="detail-container">
+        <mat-form-field>
+          <input matInput placeholder="Model" [(ngModel)]="type.model">
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="Capacity" [(ngModel)]="type.capacity">
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="Cargo" [(ngModel)]="type.carg">
+        </mat-form-field>
+      </div>
+    </mat-card-title>
+
+  </mat-card-header>
+  <img mat-card-image src="/assets/images/type.jpg" alt="Photo of Type">
+  <mat-card-content>
+    <p>
+        The Airbus A321 is a member of the Airbus A320 family of short- to medium-range,
+        narrow-body, commercial passenger twin-engine jet airliners manufactured by Airbus. 
+        It was the first derivative of the baseline Airbus A320 aircraft, and carries up to 236 passengers 
+        with a maximum range of 3,200 nmi (5,900 km; 3,700 mi).
+        
+    </p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-button (click)="goBack()">Go back</button>
+    <button mat-button (click)="save()">Save</button>
+  </mat-card-actions>
+</mat-card>
