@@ -33,7 +33,7 @@
             <input matInput placeholder="Board number" [(ngModel)]="name">
           </mat-form-field>
           <mat-form-field>
-            <input matInput placeholder="Airplane type" [(ngModel)]="type">
+            <input matInput placeholder="Airplane type (id)" [(ngModel)]="typeId">
           </mat-form-field>
           <mat-form-field>
             <input matInput placeholder="Airplane lifetime" [(ngModel)]="lifeTime">
@@ -43,6 +43,9 @@
             <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
             <mat-datepicker #picker></mat-datepicker>
           </mat-form-field>
+          <mat-form-field>
+              <input matInput placeholder="Departure (id)" [(ngModel)]="departureId">
+            </mat-form-field>
           <button mat-button color="primary" (click)="create()">Add</button>
         
         </div>

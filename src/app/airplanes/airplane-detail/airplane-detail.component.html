@@ -21,6 +21,9 @@
           <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
           <mat-datepicker #picker></mat-datepicker>
         </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="DepartureID" [(ngModel)]="airplane.departureID">
+          </mat-form-field>
       </div>
     </mat-card-title>
 

@@ -37,7 +37,7 @@ export class PilotsListComponent implements OnInit {
     this.pilotService.delete(pilot).subscribe();
   }
 
-  addAirplane(): void {
+  create(): void {
     let pilot = new Pilot(this.firstname, this.lastname, this.birthday, this.experience)
     this.pilotService.create(pilot)
       .subscribe(pilot => {

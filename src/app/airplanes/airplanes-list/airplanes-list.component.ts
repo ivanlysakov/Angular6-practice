@@ -13,6 +13,7 @@ export class AirplanesListComponent implements OnInit {
   public typeId: number;
   public lifeTime: number;
   public name: string;
+  public departureId:number
 
   airplanes: Airplane[];
   selectedAirplane: Airplane;
@@ -36,7 +37,7 @@ export class AirplanesListComponent implements OnInit {
   }
 
   create(): void {
-    let plane = new Airplane(this.name, this.typeId, this.lifeTime, this.creationDate)
+    let plane = new Airplane(this.name, this.typeId, this.lifeTime, this.creationDate, this.departureId)
     this.airplaneService.create(plane)
       .subscribe(plane => {
         this.airplanes.push(plane);

@@ -1,5 +1,5 @@
 import { Component, OnInit,Input } from '@angular/core';
-import { Type } from '../type';
+import { AirplaneType } from '../type';
 import { ActivatedRoute } from '@angular/router';
 import { TypeService } from '../type.service';
 import { Location } from '@angular/common';
@@ -11,7 +11,7 @@ import { Location } from '@angular/common';
   styleUrls: ['./type-detail.component.css']
 })
 export class TypeDetailComponent implements OnInit {
-  @Input() type: Type;
+  @Input() type: AirplaneType;
 
   constructor(
     private route: ActivatedRoute,

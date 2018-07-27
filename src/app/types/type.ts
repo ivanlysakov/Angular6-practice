@@ -1,8 +1,8 @@
-export class Type {
+export class AirplaneType {
     id: number;
     constructor (
-    capacity: number,
-    cargo: number,
-    model: string,
-    airplaneId:number){}
+      public capacity: number,
+      public cargo: number,
+      public model: string,
+      public airplaneId:number){}
   }

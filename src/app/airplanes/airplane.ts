@@ -5,7 +5,8 @@ export class Airplane {
     public name: string,
     public typeId: number,
     public lifetime: number,
-    public creationdate: string
+    public creationdate: string,
+    public departureId: number
   ) { }
 }
 

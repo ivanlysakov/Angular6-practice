@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Type } from './type';
+import { AirplaneType } from './type';
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -15,26 +15,26 @@ export class TypeService {
 
   private typesUrl = 'http://localhost:63674/api/AirplaneTypes';
 
-  getAll(): Observable<Type[]> {
-    return this.http.get<Type[]>(this.typesUrl);
+  getAll(): Observable<AirplaneType[]> {
+    return this.http.get<AirplaneType[]>(this.typesUrl);
   }
 
-  getById(id: number): Observable<Type> {
+  getById(id: number): Observable<AirplaneType> {
     const url = `${this.typesUrl}/${id}`;
-    return this.http.get<Type>(url);
+    return this.http.get<AirplaneType>(url);
   }
 
-  delete(type: Type | number): Observable<Type> {
+  delete(type: AirplaneType | number): Observable<AirplaneType> {
     const id = typeof type === 'number' ? type : type.id;
     const url = `${this.typesUrl}/${id}`;
-    return this.http.delete<Type>(url, httpOptions);
+    return this.http.delete<AirplaneType>(url, httpOptions);
 
   }
-  create(type: Type): Observable<Type> {
-    return this.http.post<Type>(this.typesUrl, type, httpOptions);
+  create(type: AirplaneType): Observable<AirplaneType> {
+    return this.http.post<AirplaneType>(this.typesUrl, type, httpOptions);
   }
 
-  update(type: Type): Observable<any> {
+  update(type: AirplaneType): Observable<any> {
     const id = type.id;
     const url = `${this.typesUrl}/${id}`;
     return this.http.put(url, type, httpOptions);

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TypeService } from '../type.service';
-import { Type } from '../type';
+import { AirplaneType } from '../type';
 
 
 @Component({
@@ -14,8 +14,8 @@ export class TypesListComponent implements OnInit {
   public model: string;
   public airplaneId: number
 
-  types: Type[];
-  selectedType: Type;
+  types: AirplaneType[];
+  selectedType: AirplaneType;
 
   constructor(private typeService: TypeService) { }
 
@@ -30,13 +30,13 @@ export class TypesListComponent implements OnInit {
     });
   }
 
-  delete(type: Type): void {
+  delete(type: AirplaneType): void {
     this.types = this.types.filter(t => t !== type);
     this.typeService.delete(type).subscribe();
   }
 
-  addAirplane(): void {
-    let type = new Type(this.capacity, this.cargo, this.model, this.airplaneId)
+  create(): void {
+    let type = new AirplaneType(this.capacity, this.cargo, this.model, this.airplaneId)
     this.typeService.create(type)
       .subscribe(type => {
         this.types.push(type);

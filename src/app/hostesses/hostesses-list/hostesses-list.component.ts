@@ -35,7 +35,7 @@ export class HostessesListComponent implements OnInit {
     this.hostessService.delete(hostess).subscribe();
   }
 
-  addAirplane(): void {
+  create(): void {
     let hostess = new Hostess(this.firstname, this.lastname, this.birthday)
     this.hostessService.create(hostess)
       .subscribe(hostess => {

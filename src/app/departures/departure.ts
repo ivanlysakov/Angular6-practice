@@ -3,7 +3,7 @@ export class Departure {
     crewId: number;
     airplaneID: number;
     constructor(
-        flightNumber: string,
-        time: string,
+        public flightNumber: string,
+        public time: string,
 ) { }
 }
