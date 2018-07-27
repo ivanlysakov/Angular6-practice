@@ -2,11 +2,9 @@
 .add-container {
     display: flex;
     flex-direction: column;
-    width: 300px;
     box-shadow: #888;
     margin: 10px;
-    float: left;
-  }
+   }
   
   .mat-list-icon {
     color: rgba(32, 9, 231, 0.54);
@@ -14,10 +12,31 @@
   
   .button,
   .a {
-    margin-right: 8px;
+    margin-right: 2px;
   }
-  .mat-list{
+ 
+  
+  .card {
+    max-width: 400px;
+    margin: 10px; 
     float: left;
   }
   
+  .header-image {
+    background-image: url('/assets/images/departure_icon.png');
+    background-size: cover;
+  }
+  .detail-container {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    box-shadow: #888;
+  }
+  .add{
+    color: rgb(180, 7, 51)
+  }
+  .title{
+    margin: 10px;
+  }
+
   

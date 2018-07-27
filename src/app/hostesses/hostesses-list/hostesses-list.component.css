@@ -1,22 +1,40 @@
 
 .add-container {
-    display: flex;
-    flex-direction: column;
-    width: 300px;
-    box-shadow: #888;
-    margin: 10px;
-  }
-  
-  .mat-list-icon {
-    color: rgba(32, 9, 231, 0.54);
-  }
-  
-  .button,
-  .a {
-    margin-right: 8px;
-  }
-  .mat-list{
-    float: left;
-  }
-  
-  
+  display: flex;
+  flex-direction: column;
+  box-shadow: #888;
+  margin: 10px;
+ }
+
+.mat-list-icon {
+  color: rgba(32, 9, 231, 0.54);
+}
+
+.button,
+.a {
+  margin-right: 2px;
+}
+
+.card {
+  max-width: 400px;
+  margin: 10px; 
+  float: left;
+}
+
+.header-image {
+  background-image: url('/assets/images/hostess_icon.png');
+  background-size: cover;
+}
+.detail-container {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  box-shadow: #888;
+}
+.add{
+  color: rgb(180, 7, 51)
+}
+.title{
+  margin: 10px;
+}
+

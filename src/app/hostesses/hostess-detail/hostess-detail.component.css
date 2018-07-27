@@ -5,7 +5,7 @@
   }
   
   .hostess-header-image {
-    background-image: url('https://cdn.melanomanewstoday.com/wp-content/uploads/2014/12/shutterstock_224750251.jpg');
+    background-image: url('/assets/images/hostess_icon.png');
     background-size: cover;
   }
   .detail-container {
